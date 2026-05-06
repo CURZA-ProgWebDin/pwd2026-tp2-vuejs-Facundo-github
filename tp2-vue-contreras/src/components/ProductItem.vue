@@ -6,7 +6,7 @@ const emit = defineEmits(['eliminar'])
 <template>
     <li>
         {{ producto.nombre }} - ${{ producto.precio }} - Stock:{{ producto.stock }} - 
-        <button @click="emit('elimnar', producto.id)">Eliminar</button>
+        <button @click="emit('eliminar', producto.id)">Eliminar</button>
     </li>
 </template>
 

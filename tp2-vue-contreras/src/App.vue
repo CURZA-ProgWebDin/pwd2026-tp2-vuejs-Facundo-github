@@ -1,6 +1,6 @@
 <script setup>
 
-import {ref, computed} from 'vue';
+import {ref, computed, reactive} from 'vue';
 import ProductForm from './components/ProductForm.vue';
 import ProductList from './components/ProductList.vue';
 
@@ -10,6 +10,13 @@ const state = reactive({
 })
 
 let idCounter = 1
+
+function crearProducto(nuevoProducto) {
+    state.productos.push({
+        ...nuevoProducto,
+        id: Date.now()
+    });
+}
 
 function eliminarProducto(id) {
     state.productos = state.productos.filter(p => p.id !== id)
@@ -22,7 +29,7 @@ const ProductosFiltrados = computed(() => {
 
 const resumen = computed(() => ({
     total: state.productos.length,
-    valorInventario: state.productos.reduce((acc, p) => acc + p.precio * precio.stock , 0) 
+    valorInventario: state.productos.reduce((acc, p) => acc + p.precio * p.stock , 0) 
 }))
 
 </script>

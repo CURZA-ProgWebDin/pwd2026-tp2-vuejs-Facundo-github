@@ -17,8 +17,12 @@ function submitForm() {
         precio: Number(precio.value),
         stock: Number(stock.value),
         categoria: categoria.value
-    })
-    nombre.value = precio.value = stock.value = categoria.value = ''
+    });
+    
+    nombre.value = '';
+    precio.value = '';
+    stock.value = '';
+    categoria.value = '';
 }
 
 </script>
