@@ -31,7 +31,7 @@ function submitForm() {
 
     <form @submit.prevent="submitForm">
         <input v-model="nombre" placeholder="Nombre" />
-        <input v-model="precio" type="number" placeholder="precio" />
+        <input v-model="precio" type="number" placeholder="Precio" />
         <input v-model="stock" type="number" placeholder="Stock"/>
         <select v-model="categoria">
             <option disabled value="">Seleccione Categoria</option>
@@ -43,3 +43,33 @@ function submitForm() {
     </form>
 
 </template>
+
+<style scoped>
+
+form{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    grid-column: span 2;
+    background-color: #acf789;
+    color: rgb(15, 10, 10);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+button:hover {
+    background-color: #45a049;
+}
+
+</style>

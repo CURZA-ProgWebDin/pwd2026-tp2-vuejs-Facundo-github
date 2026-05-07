@@ -8,7 +8,7 @@ const emit = defineEmits(['eliminar'])
 
 <template>
 
-    <ul>
+    <ul class="lista">
         <ProductItem
         v-for="p in productos"
         :key="p.id"
@@ -19,5 +19,13 @@ const emit = defineEmits(['eliminar'])
 
 </template>
 
-<style>
+<style scoped>
+.lista {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 </style>

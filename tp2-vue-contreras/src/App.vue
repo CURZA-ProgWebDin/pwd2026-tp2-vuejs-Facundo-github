@@ -35,14 +35,30 @@ const resumen = computed(() => ({
 </script>
 
 <template>
-
-    <h1>Gestion de Productos</h1>
-    <ProductForm @crear="crearProducto" />
-    <ProductList
-        :productos="ProductosFiltrados"
-        @eliminar="eliminarProducto"
-    />
-    <p>Total Productos: {{ resumen.total }}</p>
-    <p>Valor Inventario: {{ resumen.valorInventario }}</p>
+    
+    <div class="container">
+        <h1>Gestion de Productos</h1>
+        <ProductForm @crear="crearProducto" />
+        <ProductList
+            :productos="ProductosFiltrados"
+            @eliminar="eliminarProducto"
+        />
+        <p>Total Productos: {{ resumen.total }}</p>
+        <p>Valor Inventario: {{ resumen.valorInventario }}</p>
+    </div>
 
 </template>
+
+<style scoped>
+.container {
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+}
+h1{
+    text-align: center;
+    color: rgb(39, 34, 34);
+}
+
+</style>
